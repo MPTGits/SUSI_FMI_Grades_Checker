@@ -1,5 +1,7 @@
 from get_SUSI_grades import *
 import unittest 
+from unittest.mock import patch
+
 
 class TestSusiGradeGetter(unittest.TestCase):
 
@@ -29,11 +31,14 @@ class TestSusiGradeGetter(unittest.TestCase):
         lst2=[4,4,2,1]
         lst3=[3,1,3,1]
         self.assertRaises(Exception,print_student_info)
-    def test_when_equal_list_of_subjects_lectors_grades_is_give_to_the_print_function(self):
+
+    @patch("builtins.print")
+    def test_when_equal_list_of_subjects_lectors_grades_is_give_to_the_print_function(self,mock_print):
         lst1=[1,2,3,4]
         lst2=[4,4,2,1]
         lst3=[3,1,2,1]
-        self.assertEquals(True,print_student_info(lst1,lst2,lst3))
+        print_student_info(lst1,lst2,lst3)
+        mock_print.assert_called_with('Средно аритметично то всички взети изпити:',sum(lst3)/len(lst3))
 
 
 
