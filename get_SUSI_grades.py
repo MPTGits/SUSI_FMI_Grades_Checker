@@ -58,7 +58,7 @@ def main_info_geter(username='',password=''):
         bs_content2 = bs(grades_page.content, "html.parser")
 
         grades={
-        "Report_Exams1$chkTaken":"on",
+        "Report_Exams1:chkTaken":"on",
         "__EVENTARGUMENT":"",
         "__VIEWSTATE":"",
         "__VSTATE":"NULL",
