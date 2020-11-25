@@ -1,5 +1,5 @@
 # SUSI_FMI_Grades_Checker
-An programm that lets you check your FMI grades fast.
+Script that allows you to check your grades in FMI throught SUSI.
 ## How to run:
 To run the application just enter this in the console:
 ```
